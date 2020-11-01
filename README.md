@@ -12,10 +12,27 @@ This testbed is based on the DBx1000 system, whose concurrency control scalabili
 Build & Test
 ------------
 
-To build the database.
+Build dependent libraries:
+
+    wget https://github.com/jemalloc/jemalloc/releases/download/4.0.3/jemalloc-4.0.3.tar.bz2
+    tar -xf jemalloc-4.0.3.tar.bz2
+    cd jemalloc-4.0.3
+    ./configure --prefix=/path/to/deneva/jemalloc-4.0.3 --with-jemalloc-prefix=je_
+    make -jN
+    make install
+    
+    wget -O nanomsg-0.5-beta.tar.gz https://github.com/nanomsg/nanomsg/archive/0.5-beta.tar.gz
+    tar -xf nanomsg-0.5-beta.tar.gz
+    cd nanomsg-0.5-beta
+    ./autogen.sh
+    ./configure --prefix=/path/to/deneva/nanomsg-0.5-beta
+    make -jN
+    make install
+
+Build Deneva:
 
     make deps
-    make -j
+    make -jN
 
 Configuration
 -------------
