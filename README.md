@@ -12,6 +12,10 @@ This testbed is based on the DBx1000 system, whose concurrency control scalabili
 Build & Test
 ------------
 
+Install packages:
+
+    apt install g++ make autoconf libtool libboost-dev
+
 Build dependent libraries:
 
     wget https://github.com/jemalloc/jemalloc/releases/download/4.0.3/jemalloc-4.0.3.tar.bz2
